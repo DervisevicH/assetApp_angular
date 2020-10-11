@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div class="row justify-content-center" >
+    <div class="col-md-5 shadow-lg p-3 mb-5">
+      <h2>Assign asset</h2>
+        <form (ngSubmit)="onSubmit()" #assignForm="ngForm">
+            <div class="form-group">
+                <label for="employee">Employee</label>
+                <select class="form-control" [(ngModel)]="employeeId" name="employeeId" required>
+                  <option *ngFor="let e of employees" [value]="e.employeeId" >{{e.employee}}</option>              
+                </select>
+              </div>
+            <div class="form-group">
+              <label for="dateFrom">Date from</label>
+              <input type="datetime-local" class="form-control" id="dateFrom" [(ngModel)]="dateFrom" name="dateFrom" required>
+            </div>
+            <div class="form-group">
+              <label for="dateTo">Date to</label>
+              <input type="datetime-local" class="form-control" id="exampleInputPassword1" [(ngModel)]="dateTo" name="dateTo">
+            </div>
+           
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="!assignForm.form.valid">Submit</button>
+          </form>
+        </div>    
+
+</div>
+  
+</div>

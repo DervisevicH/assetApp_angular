@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <table class="table table-striped text-center">
+        <thead>
+          <tr>
+            <th scope="col">Asset Number</th>
+            <th scope="col">Asset</th>
+            <th scope="col">Category</th>
+            <th scope="col">Description</th>
+            <th scope="col">Is Available</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let asset of assets">
+            <th>{{asset.assetNmb}}</th>
+            <td>{{asset.assetName}}</td>
+            <td>{{asset.category}}</td>
+            <td>{{asset.description}}</td>
+            <td><input type="checkbox" [checked]="asset.isAvailable">
+               </td>            
+            <td>
+              <div class="col-md-2" *ngIf="asset.isAvailable">
+                <a class="btn btn-success btn-small" [routerLink]="['/assign-asset', asset.assetId]">
+                  Assign
+                 </a>
+              </div>
+              
+            </td>            
+          </tr>         
+        </tbody>
+      </table>
+</div>

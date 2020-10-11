@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+    <a class="navbar-brand" href="#">Asset tracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" routerLink="/home">Assets <span class="sr-only">Assets</span></a>
+        <a class="nav-item nav-link" routerLink="assigned-assets">Assigned assets</a>      
+          <a *ngIf="userDisplayName!=='' && userDisplayName!==null" class="nav-item nav-link"  (click)="signOut()">Sign out</a>         
+              
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <div class="container">
+        <div class="row justify-content-center " >
+        <div class="col-md-5 shadow-lg p-3 mb-5">
+            <form (ngSubmit)="onSubmit()" #assignForm="ngForm">
+                <div class="form-group">
+                    <label for="employee">Employee</label>
+                    <select class="form-control" [(ngModel)]="employeeId" name="employeeId" disabled>
+                      <option *ngFor="let e of employees"  >{{e.employee}}</option>              
+                    </select>
+                  </div>
+                <div class="form-group">
+                  <label for="dateFrom">Date from</label>
+                  <input type="datetime-local" class="form-control" id="dateFrom" [ngModel]="dateFrom | date:'yyyy-MM-ddTHH:mm'" (ngModelChange)="dateFrom = dateChanged($event)" name="dateFrom" required>
+                </div>
+                <div class="form-group">
+                  <label for="dateTo">Date to</label>
+                  <input type="datetime-local" class="form-control" id="exampleInputPassword1" [ngModel]="dateTo | date:'yyyy-MM-ddTHH:mm'" (ngModelChange)="dateTo = dateChanged($event)" name="dateTo">
+                  <span class="text-danger" *ngIf="checkDate()">End date must be greater than start date.</span>                  
+                </div> 
+                <div class="form-group">
+                  <label for="dateTo">Comment</label>
+                  <textarea name="comment" class="form-control" [(ngModel)]="comment" id="" cols="30" rows="5"></textarea>
+                </div>              
+                <button type="submit" class="btn btn-primary btn-block" [disabled]="!assignForm.form.valid">Submit</button>
+              </form>
+            </div>    
+    
+    </div>
+      
+    </div>
+    
+</div>

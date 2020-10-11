@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <table class="table table-striped text-center">
+        <thead>
+          <tr>
+            <th scope="col">Asset Nmb</th>
+            <th scope="col">Asset</th>
+            <th scope="col">Employee</th>
+            <th scope="col">Date from</th>
+            <th scope="col">Date to</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let asset of assignedAssets">
+            <th>{{asset.assetNmb}}</th>
+            <td>{{asset.asset}}</td>
+            <td>{{asset.employee}}</td>
+            <td>{{asset.dateFrom | date: 'dd/MM/yyyy'}}</td>
+            <td>{{asset.dateTo | date: 'dd/MM/yyyy'}}</td>
+            <td>
+              <button class="btn btn-success" (click)="onSelectedAsset(asset)">Return</button>
+            </td>
+          </tr>         
+        </tbody>
+      </table>
+</div>
